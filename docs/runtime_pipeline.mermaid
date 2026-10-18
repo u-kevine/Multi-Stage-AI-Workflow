@@ -1,0 +1,16 @@
+%% Diagram 2: what happens to each ticket at run time
+flowchart TD
+    A[tickets.json / .csv] --> B{Normalize:\nrequired fields present?\nduplicate id?}
+    B -- No --> R[Rejected list\n→ escalations.csv]
+    B -- Yes --> C[Model: triage prompt]
+    C --> D{Valid JSON, allowed values,\nurgent ⇒ escalate?}
+    D -- No, 1st time --> C2[Retry with validator\nerror appended] --> D
+    D -- No, 2nd time --> H[routed_to_human]
+    D -- Yes --> E[Model: reply prompt]
+    E --> F{Non-empty, under 120 words,\nno unsupported promises?}
+    F -- No, 1st time --> E2[Retry with error] --> F
+    F -- No, 2nd time --> H
+    F -- Yes --> G{escalate?}
+    G -- Yes --> N[needs_human_review\nholding reply]
+    G -- No --> OK[ready_for_agent_approval]
+    N & OK & H & R --> OUT[triaged_tickets.json\nescalations.csv\nworkflow_report.md]

@@ -1,0 +1,15 @@
+%% Two-stage workflow: Perplexity (Chat UX) -> Claude Code (IDE UX)
+flowchart LR
+    subgraph S1["STAGE 1 · CHAT UX — Perplexity"]
+        A1[Problem brief + rubric] --> A2[Design workflow]
+        A2 --> A3[Triage + reply prompts]
+        A3 --> A4[Output schema +\nstarter test tickets]
+    end
+    subgraph S2["STAGE 2 · IDE UX — Claude Code in VS Code"]
+        B1[Read Stage 1 files +\nstage2_ide_prompt.md] --> B2[Harden prompts,\nexpand test set + golden labels]
+        B2 --> B3[Generate triage package]
+        B3 --> B4[Run pytest in terminal,\nfix failures: 22 passed]
+        B4 --> B5[Run batch + evaluate\n→ results/]
+    end
+    A4 -- "prompts, schema, tickets" --> B1
+    B5 -. "mismatches → refine prompts" .-> A3
