@@ -1,4 +1,0 @@
-
-Your previous response was rejected by the validator with this error:
-{{error}}
-Return corrected JSON only.
