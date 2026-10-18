@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TriageResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ticket_id", "category", "priority", "sentiment", "escalate", "reason"],
+  "properties": {
+    "ticket_id": {"type": "string", "minLength": 1},
+    "category": {"enum": ["billing", "technical", "account_access", "product_question", "complaint", "other"]},
+    "priority": {"enum": ["low", "medium", "high", "urgent"]},
+    "sentiment": {"enum": ["positive", "neutral", "negative"]},
+    "escalate": {"type": "boolean"},
+    "reason": {"type": "string", "minLength": 1}
+  }
+}
