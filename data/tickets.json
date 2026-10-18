@@ -1,0 +1,16 @@
+[
+  {
+    "ticket_id": "TCK-1001",
+    "customer_name": "Thabo M.",
+    "subject": "Cannot log in after password reset",
+    "message": "I reset my password but still cannot sign in. This is blocking my work.",
+    "channel": "email"
+  },
+  {
+    "ticket_id": "TCK-1002",
+    "customer_name": "Aisha K.",
+    "subject": "Refund request",
+    "message": "I was charged twice for the same subscription. Please refund one payment.",
+    "channel": "web"
+  }
+]
