@@ -25,7 +25,9 @@ class MockProvider(ChatProvider):
         self.calls = {}
 
     def complete(self, prompt):
-        m = _ID_RE.search(prompt)
+        # Read the id from the ticket block only, not from the schema example.
+        start = prompt.rfind("<ticket>")
+        m = _ID_RE.search(prompt, start if start >= 0 else 0)
         tid = m.group(1) if m else "unknown"
         kind = "reply" if "Triage result:" in prompt else "triage"
         self.calls[(tid, kind)] = self.calls.get((tid, kind), 0) + 1
