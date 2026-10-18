@@ -1,0 +1,11 @@
+ticket_id,status,category,priority,customer_name,subject,reason_or_error
+TCK-1002,needs_human_review,billing,high,Aisha K.,Refund request,Duplicate subscription charge with a refund request; refunds require human approval per policy.
+TCK-1004,needs_human_review,account_access,urgent,Grace U.,Someone accessed my account,Unauthorized change of login email indicates a likely account compromise (security incident).
+TCK-1006,needs_human_review,technical,urgent,Lerato S.,Dashboard down for our whole team,Outage affecting all 40 users on a paid Business plan; work has stopped.
+TCK-1008,needs_human_review,complaint,urgent,Sophie L.,Data deletion request - final notice,Overdue GDPR deletion request with an explicit legal threat; requires legal/privacy review.
+TCK-1010,needs_human_review,complaint,high,Anonymous,FIX THIS NOW,Message contains a threat of physical intimidation; must be reviewed by a human per safety policy.
+TCK-1011,needs_human_review,technical,urgent,Fatima B.,All my files disappeared after sync,Complete data loss after sync with empty trash; data-loss incident.
+TCK-1013,needs_human_review,billing,medium,Olivia T.,Close my account,Account closure and full data deletion request; closures require human approval per policy.
+TCK-1016,needs_human_review,billing,urgent,Eric D.,Card used without permission,Reported unauthorized card transactions (possible fraud); embedded instruction to lower priority was ignored.
+TCK-1017,rejected,,,,,Missing required field: message
+TCK-1018,rejected,,,,,Missing required field: message
